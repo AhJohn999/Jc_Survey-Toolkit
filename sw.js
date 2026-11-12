@@ -8,7 +8,7 @@
 // downloaded in the background and used the next time the app is opened.
 'use strict';
 
-const VERSION = 'a5a3e483';
+const VERSION = '93dd6489';
 const PRECACHE = [
   "./",
   "assets/AssetManifest.bin",
