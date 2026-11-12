@@ -8,13 +8,14 @@
 // downloaded in the background and used the next time the app is opened.
 'use strict';
 
-const VERSION = '93dd6489';
+const VERSION = 'd9b984e9';
 const PRECACHE = [
   "./",
   "assets/AssetManifest.bin",
   "assets/AssetManifest.bin.json",
   "assets/FontManifest.json",
   "assets/NOTICES",
+  "assets/assets/brand/jc_compass_badge.png",
   "assets/assets/guide/JC_Survey_Toolkit_CSV_Headers.xlsx",
   "assets/assets/guide/JC_Survey_Toolkit_Export_Guide.pdf",
   "assets/assets/tools/JC_TimeMatch.html",
@@ -39,6 +40,11 @@ const PRECACHE = [
   "jcs_store.js",
   "main.dart.js",
   "manifest.json",
+  "pdf_view.js",
+  "pdfjs/LICENSE.txt",
+  "pdfjs/README.txt",
+  "pdfjs/pdf.min.mjs",
+  "pdfjs/pdf.worker.min.mjs",
   "version.json"
 ];
 const CACHE = 'jcs-' + VERSION;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Replaced by the `--base-href` given to `flutter build web` (tool/build_web.dart sets it). -->
-  <base href="/Jc_Survey-WebKit/">
+  <base href="/Jc_Survey-Toolkit/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -32,6 +32,8 @@
   <div id="jcs-loading">Loading JC Survey Toolkit…</div>
   <!-- The app's storage in the browser. Must load before the app starts. -->
   <script src="jcs_store.js"></script>
+  <!-- Shows PDFs inside the app (iOS will not open them from a Home Screen app). -->
+  <script src="pdf_view.js"></script>
   <script>
     // Offline support (web/sw.js). Not available on plain http:// pages other than localhost.
     if ('serviceWorker' in navigator) {
