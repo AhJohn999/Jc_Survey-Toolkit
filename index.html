@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Replaced by the `--base-href` given to `flutter build web` (tool/build_web.dart sets it). -->
+  <base href="/Jc_Survey-WebKit/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="JC Survey Toolkit: survey field records, calculations and exports. Works offline.">
+  <meta name="theme-color" content="#0F1216">
+
+  <!-- iPhone / iPad: "Add to Home Screen" opens it full screen, like an app. -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="JC Survey">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <title>JC Survey Toolkit</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #0F1216; }
+    #jcs-loading {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      color: #AFBCCB; font: 15px -apple-system, system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="jcs-loading">Loading JC Survey Toolkit…</div>
+  <!-- The app's storage in the browser. Must load before the app starts. -->
+  <script src="jcs_store.js"></script>
+  <script>
+    // Offline support (web/sw.js). Not available on plain http:// pages other than localhost.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function (e) {
+          console.warn('Offline support could not start:', e);
+        });
+      });
+    }
+    // Hide the loading text once the app has drawn its first screen.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('jcs-loading');
+      if (el) el.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
